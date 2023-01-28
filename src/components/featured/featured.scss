@@ -26,8 +26,8 @@
 		gap: 10px;
 
 		.featuredChart {
-			width: 100px;
-			height: 100px;
+			width: 250px;
+			height: 250px;
 		}
 
 		.title {
@@ -40,7 +40,7 @@
 		}
 
 		.desc {
-			font-size: 12px;
+			font-size: 13px;
 			font-weight: 300;
 			color: #808080;
 			text-align: center;
@@ -48,6 +48,7 @@
 
 		.summary {
 			width: 100%;
+      margin-top: 20px;
 			display: flex;
 			align-items: center;
 			justify-content: space-between;
