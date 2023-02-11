@@ -1,4 +1,6 @@
+import { useContext } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { ModeContext } from "./context/modeContext";
 import { productInputs, userInputs } from "./formSource";
 import Home from "./pages/home/Home";
 import List from "./pages/list/List";
@@ -6,9 +8,11 @@ import Login from "./pages/login/Login";
 import New from "./pages/new/New";
 import Single from "./pages/single/Single";
 
+import "./style/dark.scss";
 function App() {
+	const { darkMode } = useContext(ModeContext);
 	return (
-		<>
+		<div className={darkMode ? "app dark" : "app"}>
 			<BrowserRouter>
 				<Routes>
 					<Route path="/">
@@ -30,7 +34,7 @@ function App() {
 					</Route>
 				</Routes>
 			</BrowserRouter>
-		</>
+		</div>
 	);
 }
 

@@ -3,14 +3,19 @@ import {
 	DarkModeOutlined,
 	FullscreenExitOutlined,
 	LanguageOutlined,
+	LightModeOutlined,
 	ListOutlined,
 	NotificationsNoneOutlined,
 	SearchOutlined,
 } from "@mui/icons-material";
 import "./navbar.scss";
 import Avatar from "../../assets/images/avatar.jpg";
+import { useContext } from "react";
+import { ModeContext } from "../../context/modeContext";
 
 const Navbar = () => {
+	const { darkMode, dispatch } = useContext(ModeContext);
+
 	return (
 		<div className="navbar">
 			<div className="wrapper">
@@ -23,8 +28,16 @@ const Navbar = () => {
 						<LanguageOutlined className="icon" />
 						English
 					</div>
-					<div className="item">
-						<DarkModeOutlined className="icon" />
+					<div
+						className="item"
+						style={{ cursor: "pointer" }}
+						onClick={() => dispatch({ type: "TOGGLE" })}
+					>
+						{!darkMode ? (
+							<DarkModeOutlined className="icon" />
+						) : (
+							<LightModeOutlined className="icon" />
+						)}
 					</div>
 					<div className="item">
 						<FullscreenExitOutlined className="icon" />
